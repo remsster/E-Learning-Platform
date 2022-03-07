@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: 961f59cbd6f83f3469f4a901ef1edab2
+  - enabled: 1
     path: Assets/Scenes/Simple Math Lab.unity
     guid: 7fb214721992bb042b3cac0f131db0c8
   m_configObjects:
