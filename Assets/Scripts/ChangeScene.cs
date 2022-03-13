@@ -23,7 +23,7 @@ public class ChangeScene : MonoBehaviour
 
     public void MoveToHome()
     {
-        SceneManager.LoadScene("Simple Math Lab");
+        SceneManager.LoadScene("Home");
 
     }
 

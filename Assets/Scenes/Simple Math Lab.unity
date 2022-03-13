@@ -947,6 +947,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 342229039658666298, guid: 6f8bb3a9715d1cf4c95c51488999e15b, type: 3}
   m_PrefabInstance: {fileID: 1684943467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1653316882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914396, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933431940493914398, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+      propertyPath: m_Name
+      value: Button Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+--- !u!114 &1653316883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1933431940493914397, guid: bf77dcebf9f2e8c408ca9c69a96b6a40, type: 3}
+  m_PrefabInstance: {fileID: 1653316882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c71d2490edc894988d83576a87b9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1684943467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,6 +1923,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1319515967, guid: 4e1b26119eab5674a894d54f69dc6dae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653316883}
+    - target: {fileID: 1319515967, guid: 4e1b26119eab5674a894d54f69dc6dae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994503144, guid: 4e1b26119eab5674a894d54f69dc6dae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653316883}
+    - target: {fileID: 1994503144, guid: 4e1b26119eab5674a894d54f69dc6dae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToMathLab
+      objectReference: {fileID: 0}
     - target: {fileID: 6706367346154000802, guid: 4e1b26119eab5674a894d54f69dc6dae, type: 3}
       propertyPath: m_InteractionManager
       value: 
