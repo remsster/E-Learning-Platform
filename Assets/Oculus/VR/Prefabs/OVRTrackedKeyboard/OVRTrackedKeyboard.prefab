@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackingEnabled: 1
+  connectionRequired: 1
+  showUntracked: 0
   keyboardQueryFlags: 2
   presentation: 0
   PassthroughBorderMultiplier: 0.2
@@ -172,10 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f856490bcef82364d9770bece066fcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftHandPresence: {fileID: 6473791250914920026, guid: 9aaa891e0ba205049a65645fcd08743a,
-    type: 3}
-  RightHandPresence: {fileID: 994359214384669428, guid: f87c1bb867ed6194ea69c0d3a05a6209,
-    type: 3}
+  LeftHandPresence: {fileID: 6473791250914920026, guid: 9aaa891e0ba205049a65645fcd08743a, type: 3}
+  RightHandPresence: {fileID: 994359214384669428, guid: f87c1bb867ed6194ea69c0d3a05a6209, type: 3}
   KeyboardTracker: {fileID: 1726274527906839442}
   HandsMaterial: {fileID: 2100000, guid: e5efaaa7295b60c4b99c88ff76db4d0c, type: 2}
 --- !u!114 &365103210938825357
@@ -197,9 +197,6 @@ MonoBehaviour:
   overridePerLayerColorScaleAndOffset: 0
   colorScale: {x: 1, y: 1, z: 1, w: 1}
   colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  overrideBlendFactors: 0
-  srcBlendFactor: 2
-  dstBlendFactor: 3
   colorMapEditorType_: 0
   colorMapEditorGradient:
     serializedVersion: 2

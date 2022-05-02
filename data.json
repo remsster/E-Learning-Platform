@@ -1,0 +1,19 @@
+{
+	"courses": [
+		{
+			"name":"Basic Mathematics",
+			"category": "Mathematics",
+			"Description": "Basic mathmatics"
+		},
+		{
+			"name":"Enginering Mechanics",
+			"category": "Engineering",
+			"Description": "Learn about computers"
+		},
+		{
+			"name": "Biology",
+			"category": "Science",
+			"Description": "Learning about the humman body"
+		}
+	]
+}
