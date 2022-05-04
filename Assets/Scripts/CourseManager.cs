@@ -17,6 +17,7 @@ public class CourseManager : MonoBehaviour
         new Course { name = "Biology",category = "Science", description = "Learning about the human body"},
         new Course { name = "Algebra",category = "Mathmetics", description = "Learing about linear algebra"},
         new Course { name = "Chemistry",category = "Science", description = "Learning about chemical reactions"},
+        new Course { name = "Astrology",category = "Science", description = "Learning about space"},
     };
     
 
