@@ -4,12 +4,14 @@ using UnityEngine.UI;
 
 public class CourseManager : MonoBehaviour
 {
-    // string name;
+    
 
+    
+    [SerializeField] UnityEngine.UI.Button buttonPrefab;
 
-    public UnityEngine.UI.Button buttonPrefab;
-
-    public GameObject content;
+    [SerializeField] GameObject content;
+    
+    // test data for the
     private Course[] courses = 
         { 
         new Course { name = "Basic Mathmetics",category = "Mathmetics", description = "The basics of mathematics"},
@@ -18,30 +20,28 @@ public class CourseManager : MonoBehaviour
         new Course { name = "Algebra",category = "Mathmetics", description = "Learing about linear algebra"},
         new Course { name = "Chemistry",category = "Science", description = "Learning about chemical reactions"},
         new Course { name = "Astrology",category = "Science", description = "Learning about space"},
+        new Course { name = "Tudors",category = "History", description = "Learning about henry VIII"},
+        new Course { name = "Egyptians",category = "History", description = "Learning about "}
     };
+
     
 
-    private void Start()
+    public void GetCourses(string category = "")
     {
-        SetCourseArray();
-        GetCourses();
-    }
-
-
-    public void SetCourseArray() {
-        //courses = APIHelper.GetCourse();   
-    }
-
-    public void GetCourses()
-    {
-
-        //Debug.Log("Num of courses: " + courses.Length);
+        foreach(Transform child in content.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         for (int i = 0; i < courses.Length; i++)
         {
-            Button b = Instantiate(buttonPrefab, content.transform);
-            b.GetComponentInChildren<Text>().text = courses[i].name;
+            if (courses[i].category.Equals(category) || category == "")
+            {
+
+                Button b = Instantiate(buttonPrefab, content.transform);
+                b.GetComponentInChildren<Text>().text = courses[i].name;
+            }
         }
-        Debug.Log("I should see my courses");
+        
         
     }
 }

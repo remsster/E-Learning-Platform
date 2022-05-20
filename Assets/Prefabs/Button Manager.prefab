@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933431940493914396}
   - component: {fileID: 1933431940493914397}
+  - component: {fileID: 116758193}
   m_Layer: 0
   m_Name: Button Manager
   m_TagString: Untagged
@@ -27,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,3 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c71d2490edc894988d83576a87b9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &116758193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933431940493914398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7e41f6cc6ffc84c92c652e354a67ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFieldText: {fileID: 0}
+  output: {fileID: 0}
+  courseManager: {fileID: 0}
