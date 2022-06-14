@@ -6,13 +6,17 @@ using System.Collections.Generic;
 public class CourseManager : MonoBehaviour
 {   
     [SerializeField] UnityEngine.UI.Button buttonPrefab;
+    [SerializeField] UnityEngine.UI.Button enrolButtonPrefab;
 
-    [SerializeField] GameObject content;
+    [SerializeField] GameObject coursesScrollViewContent;
+    [SerializeField] GameObject enroledCoursesScrollViewContent;
 
     [SerializeField] GameObject panelCourseTitle;
     [SerializeField] GameObject panelCourseDescription;
 
     [SerializeField] GameObject playAudioButton;
+
+    private Course currentlySelectedCourse;
 
     private Dictionary<string,Course> courses = new Dictionary<string, Course>()
     {
@@ -67,18 +71,46 @@ public class CourseManager : MonoBehaviour
 
     };
 
+    private Dictionary<string, Course> enrolledCourses = new Dictionary<string, Course>();
 
     public void SetCourse(string courseId)
     {
         Course pickedCourse = courses[courseId];
+        currentlySelectedCourse = pickedCourse;
         panelCourseTitle.GetComponent<Text>().text = pickedCourse.Name;
         panelCourseDescription.GetComponent<Text>().text = pickedCourse.Description;
         playAudioButton.GetComponent<PlayAudio>().SetAudioClip(courseId);
     }
 
-    public void GetCourses(string category = "")
+    
+    // Called by enrol button in engine
+    public void EnrolOnCourse()
     {
-        foreach(Transform child in content.transform)
+        if (currentlySelectedCourse == null || currentlySelectedCourse.Equals("")) return;
+        courses.Remove(currentlySelectedCourse.Id);
+        enrolledCourses.Add(currentlySelectedCourse.Id, currentlySelectedCourse);
+        DisplayEnroledCourses();
+    }
+
+    public void DisplayEnroledCourses()
+    {
+        DisplayCourses();
+        foreach (Transform child in enroledCoursesScrollViewContent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        foreach (KeyValuePair<string, Course> course in enrolledCourses)
+        {
+            Button b = Instantiate(enrolButtonPrefab, enroledCoursesScrollViewContent.transform);
+            b.GetComponentInChildren<Text>().text = $"{course.Value.Id} : {course.Value.Name}";   
+        }
+
+    }
+
+    public void DisplayCourses(string category = "")
+    {
+        foreach(Transform child in coursesScrollViewContent.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
@@ -87,7 +119,7 @@ public class CourseManager : MonoBehaviour
         {
             if (course.Value.Category.ToLower().Equals(category) || category == "") 
             {
-                Button b = Instantiate(buttonPrefab, content.transform);
+                Button b = Instantiate(buttonPrefab, coursesScrollViewContent.transform);
                 b.GetComponentInChildren<Text>().text = $"{course.Value.Id} : {course.Value.Name}";   
             }
         }

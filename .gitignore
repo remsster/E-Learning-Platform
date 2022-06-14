@@ -19,6 +19,8 @@
 /[Aa]ssets/AssetStoreTools*
 # ignore imported assets
 /[Aa]ssets/UIKits*
+/[Aa]ssets/ImportedPackages/*
+/[Aa]ssets/Beautiful Progress Bar Free - CYKO*
 
 # TextMesh Pro files
 [Aa]ssets/TextMesh*Pro/
