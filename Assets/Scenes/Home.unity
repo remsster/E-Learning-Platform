@@ -180,11 +180,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 8902833596021348796, guid: 4895e7884fd34e34980bf35918eed328, type: 3}
   enrolButtonPrefab: {fileID: 5817415967418577392, guid: 6218bb255c94dd148b9b5cc48520ad73, type: 3}
-  coursesScrollViewContent: {fileID: 1621418525}
-  enroledCoursesScrollViewContent: {fileID: 613415301}
   panelCourseTitle: {fileID: 1720501017}
   panelCourseDescription: {fileID: 1129747298}
   playAudioButton: {fileID: 879117961}
+  mainCourseView: {fileID: 722283246}
+  coursesScrollViewContent: {fileID: 1621418525}
+  panelEnrolledTitle: {fileID: 1137735698}
+  enrolCourseDetailView: {fileID: 168167572}
+  enroledCoursesScrollViewContent: {fileID: 613415301}
 --- !u!1 &168167572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,7 +2736,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2786,7 +2789,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137735698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000023842}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2795,8 +2798,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347.7, y: 302.4}
-  m_SizeDelta: {x: 248.75, y: 55.390015}
+  m_AnchoredPosition: {x: -153.02, y: 302.4}
+  m_SizeDelta: {x: 638.11, y: 55.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137735700
 MonoBehaviour:
@@ -4209,8 +4212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.26, y: 305.70004}
-  m_SizeDelta: {x: 272.18, y: 55.39}
+  m_AnchoredPosition: {x: 0.0012054, y: 305.70004}
+  m_SizeDelta: {x: 624.7, y: 55.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720501019
 MonoBehaviour:
@@ -4576,7 +4579,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1871877511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118758671}
+        m_TargetAssemblyTypeName: CourseManager, Assembly-CSharp
+        m_MethodName: RemoveEnroledCourse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1871877511
 MonoBehaviour:
   m_ObjectHideFlags: 0

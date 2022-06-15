@@ -4,18 +4,29 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class CourseManager : MonoBehaviour
-{   
+{
+    // prefaps to instanciate
+    [Header("Button Prefabs")]
     [SerializeField] UnityEngine.UI.Button buttonPrefab;
     [SerializeField] UnityEngine.UI.Button enrolButtonPrefab;
 
-    [SerializeField] GameObject coursesScrollViewContent;
-    [SerializeField] GameObject enroledCoursesScrollViewContent;
 
+    
+    
+
+    [Header("Main panel objects")]
     [SerializeField] GameObject panelCourseTitle;
     [SerializeField] GameObject panelCourseDescription;
-
     [SerializeField] GameObject playAudioButton;
+    [SerializeField] GameObject mainCourseView;
+    [SerializeField] GameObject coursesScrollViewContent;
 
+    [Header("Enrol panel objects")]
+    [SerializeField] GameObject panelEnrolledTitle;
+    [SerializeField] GameObject enrolCourseDetailView;
+    [SerializeField] GameObject enroledCoursesScrollViewContent;
+
+    // refrence for moving courses between dictionaries
     private Course currentlySelectedCourse;
 
     private Dictionary<string,Course> courses = new Dictionary<string, Course>()
@@ -73,8 +84,19 @@ public class CourseManager : MonoBehaviour
 
     private Dictionary<string, Course> enrolledCourses = new Dictionary<string, Course>();
 
+    private void Start()
+    {
+        mainCourseView.SetActive(false);
+        enrolCourseDetailView.SetActive(false);
+    }
+
+    /// <summary>
+    /// Show course details in the main course panel
+    /// </summary> 
+    /// <param name="courseId">the course id</param>
     public void SetCourse(string courseId)
     {
+        if (mainCourseView.activeSelf == false) mainCourseView.SetActive(true);
         Course pickedCourse = courses[courseId];
         currentlySelectedCourse = pickedCourse;
         panelCourseTitle.GetComponent<Text>().text = pickedCourse.Name;
@@ -82,16 +104,42 @@ public class CourseManager : MonoBehaviour
         playAudioButton.GetComponent<PlayAudio>().SetAudioClip(courseId);
     }
 
+    /// <summary>
+    /// Set details for the enroled course in the enroled panel
+    /// </summary>
+    /// <param name="id">the course id</param>
+    public void SetEnrolledCourse(string id)
+    {
+        if (enrolCourseDetailView.activeSelf == false) enrolCourseDetailView.SetActive(true);
+        Course enroledPickedCourse = enrolledCourses[id];
+        currentlySelectedCourse = enroledPickedCourse;
+        panelEnrolledTitle.GetComponent<Text>().text = enroledPickedCourse.Name;
+
+    }
+
     
     // Called by enrol button in engine
     public void EnrolOnCourse()
     {
+        mainCourseView.SetActive(false);
         if (currentlySelectedCourse == null || currentlySelectedCourse.Equals("")) return;
         courses.Remove(currentlySelectedCourse.Id);
         enrolledCourses.Add(currentlySelectedCourse.Id, currentlySelectedCourse);
         DisplayEnroledCourses();
     }
 
+    public void RemoveEnroledCourse()
+    {
+        enrolCourseDetailView.SetActive(false);
+        if (currentlySelectedCourse == null || currentlySelectedCourse.Equals("")) return;
+        enrolledCourses.Remove(currentlySelectedCourse.Id);
+        courses.Add(currentlySelectedCourse.Id, currentlySelectedCourse);
+        DisplayEnroledCourses();
+    }
+
+    /// <summary>
+    /// Displays enroled courses in horizontal scroll view
+    /// </summary>
     public void DisplayEnroledCourses()
     {
         DisplayCourses();
@@ -108,6 +156,10 @@ public class CourseManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Displays courses in vertical scroll view in main course panel
+    /// </summary>
+    /// <param name="category">Able to filter courses by category form keyboard input</param>
     public void DisplayCourses(string category = "")
     {
         foreach(Transform child in coursesScrollViewContent.transform)

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 5817415967418577394}
   - component: {fileID: 5817415967418577393}
   - component: {fileID: 5817415967418577392}
+  - component: {fileID: 9207901805314533019}
   m_Layer: 0
   m_Name: Enrolled Course Button
   m_TagString: Untagged
@@ -201,4 +202,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5817415967418577393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9207901805314533019}
+        m_TargetAssemblyTypeName: CourseButtonSetter, Assembly-CSharp
+        m_MethodName: ButtonEnroledClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9207901805314533019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817415967418577398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e561fa1763e5c0f4a8cfd0159c7391c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
